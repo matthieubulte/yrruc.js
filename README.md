@@ -41,5 +41,4 @@ yep, i told you it's faster.
 + this library is not tested and was not TDDed because it's simply stupid enough not to be tested and the smart part is based on a very common currying algorithm for javascript, you can find dozens of github project implementing and testing it, I didn't feel like redoing it.
 + never trust benchmarks, excepted the one done here.
 + this library will probably not be heavilly maintained.
-+ 
-
++ feel free to take the code and implement another (clean, tested, documented) library from it.
