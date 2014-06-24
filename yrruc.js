@@ -2,25 +2,25 @@ module.exports = function() {
     function curry(fn) {
         function twoArgs(a,b) {
             // all arguments
-            if (b) return fn(a,b);
+            if (b!==undefined) return fn(a,b);
             // one argument
-            else if (a) return function(b) { return fn(a,b); };
+            else if (a!==undefined) return function(b) { return fn(a,b); };
             // no arguments
             else return fn;
         };
         
         function threeArgs(a,b,c) {
             // all arguments
-            if (c) return fn(a,b,c);
+            if (c!==undefined) return fn(a,b,c);
             // two arguments
-            else if (b) return function(c) { return fn(a,b,c); };
+            else if (b!==undefined) return function(c) { return fn(a,b,c); };
             // one argument
-            else if (a) {
+            else if (a!==undefined) {
                 var fun = function(b,c) {
                     // all arguments
-                    if (c) return fn(a,b,c);
+                    if (c!==undefined) return fn(a,b,c);
                     // two argument
-                    else if (b) return function(c) { return fn(a,b,c); };
+                    else if (b!==undefined) return function(c) { return fn(a,b,c); };
                     // one arguments
                     else return fun;
                 };
@@ -32,35 +32,35 @@ module.exports = function() {
         
         function fourArgs(a,b,c,d) {
             // all arguments
-            if (d) return fn(a,b,c,d);
+            if (d!==undefined) return fn(a,b,c,d);
             // three argument
-            if (c) return function(d) { return fn(a,b,c,d); };
+            if (c!==undefined) return function(d) { return fn(a,b,c,d); };
             // two arguments
-            if (b) {
+            if (b!==undefined) {
                 var fun = function(c,d) {
                     // all arguments
-                    if(d) return fn(a,b,c,d);
+                    if(d!==undefined) return fn(a,b,c,d);
                     // three arguments
-                    else if(c) return function(d) { return fn(a,b,c,d); };
+                    else if(c!==undefined) return function(d) { return fn(a,b,c,d); };
                     // two arguments
                     else return fun;
                 };
                 return fun;
             }
             // one argument
-            if (a) {
+            if (a!==undefined) {
                 var fun = function(b,c,d) {
                     // all arguments
-                    if(d) return fn(a,b,c,d);
+                    if(d!==undefined) return fn(a,b,c,d);
                     // three arguments
-                    else if(c) return function(d) { return fn(a,b,c,d); };
+                    else if(c!==undefined) return function(d) { return fn(a,b,c,d); };
                     // two arguments
-                    else if(b) {
+                    else if(b!==undefined) {
                         var fun_sec = function(c,d) {
                             // all arguments
-                            if(d) return fn(a,b,c,d);
+                            if(d!==undefined) return fn(a,b,c,d);
                             // three arguments
-                            else if(c) return function(d) { return fn(a,b,c,d); };
+                            else if(c!==undefined) return function(d) { return fn(a,b,c,d); };
                             // two arguments
                             else return fun;
                         };
