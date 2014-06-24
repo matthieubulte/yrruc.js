@@ -9,7 +9,7 @@ yrruc.js adds high performances currying on functions up to 4 arguments. For mor
 The gain in performances has the price of a really uggly implementation, it's really a pain in the ass to implement and it gets worse with more arguments, that's why I limited the number of fast implementation to 4 (and four is already a large enough number of arguments).
 
 ###usage
-```
+```javascript
 var yrruc = require('yrruc');
 
 // that function is living at the edge, it takes 4 arguments.
